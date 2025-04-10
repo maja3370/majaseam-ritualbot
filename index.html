@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>마자샘 리추얼봇</title>
+  <style>
+    body {
+      background-color: #faf3f0;
+      font-family: "Apple SD Gothic Neo", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background-color: #fff0f0;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #b0122c;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    #message {
+      font-size: 20px;
+      color: #444;
+      margin: 30px 0;
+      min-height: 48px;
+    }
+    button {
+      background-color: #b0122c;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #921020;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>✨ 마자샘 리추얼봇 ✨</h1>
+    <div id="message">버튼을 눌러 오늘의 마법 메시지를 받아보세요.</div>
+    <button onclick="newMessage()">새 메시지 받기</button>
+  </div>
+
+  <script>
+    const messages = [
+      "기록은 오늘의 나를, 내일의 나에게 건네는 편지예요.",
+      "감정은 숨겨야 할 게 아니라, 해석해야 할 마법이에요.",
+      "운은 기다리는 게 아니라, 살아내는 거예요.",
+      "오늘 멈춘 건, 더 멀리 가기 위한 준비일 수 있어요.",
+      "지금의 흔들림도, 우주의 리듬이에요."
+    ];
+
+    function newMessage() {
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      document.getElementById("message").innerText = messages[randomIndex];
+    }
+  </script>
+</body>
+</html>
